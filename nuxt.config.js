@@ -39,6 +39,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -61,6 +62,21 @@ googleFonts: {
 bootstrapVue: {
   bootstrapCSS: false,
   bootstrapVueCSS: false
+},
+
+sitemap: {
+  hostname: 'https://www.amorphoushotel.com/',
+  gzip: true,
+  exclude: [
+  ],
+  routes: [
+    {
+      url: '/',  //  relative path to hostname
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
+  ]
 },
 
 // Import custom variable file to override default bootstrap variable
