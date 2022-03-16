@@ -1,0 +1,8 @@
+// ~符號指向 /node_modules/ 資料夾
+@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap-vue/src/index.scss';
+
+// General style overrides and custom classes
+@import "./components/wrapper";
+@import "./components/color";
+@import "./components/font";
