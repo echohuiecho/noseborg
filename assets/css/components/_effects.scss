@@ -1,0 +1,18 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// transition effects
+.home-enter-active, .home-leave-active { transition: opacity .5s; }
+.home-enter, .home-leave-active { opacity: 0; }
+
+.loading-enter-active, .loading-leave-active { transition: opacity .2s; }
+.loading-enter, .loading-leave-active { opacity: 0; }
+
+.dimming-enter-active, .dimming-leave-active { transition: opacity 3s; }
+.dimming-enter, .dimming-leave-active { opacity: 0; }
+
+// loading effects
+.loading-animation-container {
+	width: 200px;
+}

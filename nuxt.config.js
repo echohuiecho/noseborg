@@ -43,6 +43,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    'nuxt-material-design-icons-iconfont',
+    '@nuxt/image',
     '@nuxtjs/sitemap'
   ],
 
@@ -58,6 +60,9 @@ googleFonts: {
     'IBM Plex Sans': {
       wght: [400, 500, 600, 700],
     },
+    'Noto Sans HK': {
+      wght: [400, 500, 600, 700],
+    },
   },
   display: 'swap'
 },
@@ -66,6 +71,14 @@ googleFonts: {
 bootstrapVue: {
   bootstrapCSS: false,
   bootstrapVueCSS: false
+},
+
+// nuxt image module configuration
+image: {
+  // Options
+  cloudinary: {
+    baseURL: 'https://res.cloudinary.com/echohui/image/upload/v1649585814/2022_IntroToCreativeCoding_AAISS_Workshop/'
+  }
 },
 
 sitemap: {
