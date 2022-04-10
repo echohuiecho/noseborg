@@ -234,7 +234,7 @@ export default {
         {
           type: 'RTF',
           title: 'Generative - NFT marketplace for creative coder',
-          subtitle: 'CryptoPunks',
+          subtitle: 'ArtBlocks.io',
           contentList: [
             '10,000 uniquely generated characters',
             'Ethereum Blockchain'
