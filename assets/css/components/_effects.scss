@@ -2,6 +2,15 @@
   cursor: pointer;
 }
 
+a.disabled,
+i.disabled {
+  /* Make the disabled links grayish*/
+  color: gray;
+  /* And disable the pointer events */
+  pointer-events: none;
+  cursor: default;
+}
+
 // transition effects
 .home-enter-active, .home-leave-active { transition: opacity .5s; }
 .home-enter, .home-leave-active { opacity: 0; }

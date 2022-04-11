@@ -33,8 +33,9 @@
           {{ content[contentCounter].subtitle }}
         </h2>
         <ul
-            class="text-white"
-          >
+          v-if="content[contentCounter].contentList.length > 0"
+          class="text-white"
+        >
           <li
             v-for="contentItem in content[contentCounter].contentList"
             :key="contentItem"
@@ -100,26 +101,41 @@
       <!-- Page Buttons -->
       <div
         class="
-          fixed-bottom mb-3
-          text-center
+          slides-control-wrapper mb-3
+          text-center text-white
           cursor-pointer
+          d-flex align-items-center
         "
       >
         <i
           class="
-            text-white
             material-icons
+            link-secondary text-decoration-none
           "
-          @click="prevContent"
+          :class="{ 'disabled': contentCounter === 0 }"
+          @click.prevent="prevContent"
         >
           arrow_back_ios
         </i>
+        <input
+          v-model.number.lazy="pageCount" type="number"
+          class="
+            form-control workshop-slides-form-control
+            text-center
+          "
+        >
+        <span
+          class="ml-2"
+        >
+          / {{ content.length }}
+        </span>
         <i
           class="
-            text-white
             material-icons
+            link-secondary text-decoration-none
           "
-          @click="nextContent"
+          :class="{ 'disabled': contentCounter === content.length - 1 }"
+          @click.prevent="nextContent"
         >
           arrow_forward_ios
         </i>
@@ -144,6 +160,7 @@ export default {
     return {
       // interaction content
       contentCounter: 0,
+      pageCount: 1,
       content: [
         {
           type: 'plain text',
@@ -476,12 +493,116 @@ export default {
             }
           ],
           URL: [
+            'https://amorphoushotel.com/SmellLobby',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Coding Time - The Importance of Particle Systems',
+          subtitle: '',
+          contentList: [
+            'An essential concept in creating coding and game development',
+          ],
+          images: [
+            {
+              id:'particle-systems-1_acdqei.jpg',
+              source: 'https://natureofcode.com/book/chapter-4-particle-systems/',
+            }
+          ],
+          URL: [
             'https://natureofcode.com/book/chapter-4-particle-systems/',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Coding Time - Understanding Encapsulation',
+          subtitle: '',
+          contentList: [
+            'Class in p5.js',
+          ],
+          images: [
+            {
+              id:'Class-1_h7f7f4.png',
+              source: 'Understanding Encapsulation',
+            }
+          ],
+          URL: [
+            '',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Coding Time - Understanding Physics in creative coding',
+          subtitle: 'Velocity, acceleration and gravity',
+          contentList: [
+            '',
+          ],
+          images: [
+            {
+              id:'Speed-and-Velocity_k3cycz.jpg',
+              source: 'https://www.coolkidfacts.com/speed-and-velocity/',
+            }
+          ],
+          URL: [
+            '',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Coding Time - Understanding Physics in creative coding',
+          subtitle: 'Velocity, acceleration and gravity',
+          contentList: [
+            'To simplify things in the particle system, we assume the mass (m) to be 1.<br> F = ma<br>F = (1) * a<br>Thus, force equals acceleration.<br>F = a',
+          ],
+          images: [
+            {
+              id:'gravity-acceleration_cmvmap.jpg',
+              source: 'https://www.piping-designer.com/index.php/properties/classical-mechanics/384-gravitational-acceleration',
+            }
+          ],
+          URL: [
+            '',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Introduction to Creative Coding: Interactive Fireworks Party 創意編程入門: 互動花火大會',
+          subtitle: 'Workshop Resources',
+          contentList: [],
+          images: [
+            {
+              id:'',
+              source: '',
+            }
+          ],
+          URL: [
+            'https://www.noseborg.com/workshops/IntroToCreativeCoding/WorkshopResources',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Introduction to Creative Coding: Interactive Fireworks Party 創意編程入門: 互動花火大會',
+          subtitle: 'Licenses',
+          contentList: [],
+          images: [
+            {
+              id:'licenses_wrlapo.png',
+              source: 'Openprocessing',
+            }
+          ],
+          URL: [
+            'https://creativecommons.org/licenses/?lang=en',
           ],
         },
       ],
       contentLoop: true,
     };
+  },
+  watch: {
+    pageCount() {
+      this.contentCounter = this.pageCount - 1;
+      this.contentLoop = true;
+    },
   },
   mounted() {
     const body = document.getElementsByTagName('body')[0];
@@ -497,10 +618,12 @@ export default {
     },
     prevContent() {
       this.contentCounter -= 1;
+      this.pageCount -= 1;
       this.contentLoop = true;
     },
     nextContent() {
       this.contentCounter += 1;
+      this.pageCount += 1;
       this.contentLoop = true;
     },
     goToNextPage() {

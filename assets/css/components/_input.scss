@@ -1,0 +1,23 @@
+// forms
+.form-control {
+  border-color: $secondary;
+  &:focus,
+  &:active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $white;
+    color: $white;
+    text-align: center;
+  }
+  &.workshop-slides-form-control {
+    width: 80px;
+    background-color: transparent;
+  }
+  
+}
+
+.form-control[type="number"]::-webkit-inner-spin-button,
+.form-control[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

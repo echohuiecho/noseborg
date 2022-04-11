@@ -24,5 +24,10 @@
 // workshops
 .workshop-slide-img-wrapper {
   width: auto;
-  height: 500px;
+  height: 60vh;
+}
+
+.slides-control-wrapper {
+  bottom: 0;
+  position: fixed;
 }
