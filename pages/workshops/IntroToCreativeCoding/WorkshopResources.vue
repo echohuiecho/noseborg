@@ -40,6 +40,7 @@
             <span>
               <a
                 :href="contentItem.link" class="text-secondary"
+                target="_blank"
               >
                 {{  contentItem.link }}
               </a>
@@ -96,6 +97,7 @@
               <span>
                 <a
                   :href="url.link" class="text-secondary"
+                  target="_blank"
                 >
                   {{  url.link }}
                 </a>
