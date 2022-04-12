@@ -174,6 +174,10 @@ export default {
               link: 'https://www.instagram.com/echohuiecho/',
             },
             {
+              description: 'Personal Website',
+              link: 'https://www.echohuiecho.com/',
+            },
+            {
               description: 'GitHub - recent projects and project source code',
               link: 'https://github.com/echohuiecho',
             },
