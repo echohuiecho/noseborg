@@ -477,7 +477,7 @@ export default {
         },
         {
           type: 'plain text',
-          content: 'Let&lsquo; code!'
+          content: 'Let\' code!'
         },
         {
           type: 'RTF',
@@ -488,7 +488,7 @@ export default {
           ],
           images: [
             {
-              id:'amorhpus-hotel_u8jd56.png',
+              id:'amorhpus-hotel-2_qqetfg.jpg',
               source: 'Echo Hui',
             }
           ],
@@ -552,7 +552,10 @@ export default {
           title: 'Coding Time - Understanding Physics in creative coding',
           subtitle: 'Velocity, acceleration and gravity',
           contentList: [
-            'To simplify things in the particle system, we assume the mass (m) to be 1.<br> F = ma<br>F = (1) * a<br>Thus, force equals acceleration.<br>F = a',
+            'To simplify things in the particle system, we assume the mass (m) to be 1.',
+            'F = ma',
+            'F = (1) * a',
+            'Thus, force equals acceleration. F = a'
           ],
           images: [
             {
@@ -562,21 +565,6 @@ export default {
           ],
           URL: [
             '',
-          ],
-        },
-        {
-          type: 'RTF',
-          title: 'Introduction to Creative Coding: Interactive Fireworks Party 創意編程入門: 互動花火大會',
-          subtitle: 'Workshop Resources',
-          contentList: [],
-          images: [
-            {
-              id:'',
-              source: '',
-            }
-          ],
-          URL: [
-            'https://www.noseborg.com/workshops/IntroToCreativeCoding/WorkshopResources',
           ],
         },
         {
@@ -592,6 +580,21 @@ export default {
           ],
           URL: [
             'https://creativecommons.org/licenses/?lang=en',
+          ],
+        },
+        {
+          type: 'RTF',
+          title: 'Introduction to Creative Coding: Interactive Fireworks Party 創意編程入門: 互動花火大會',
+          subtitle: 'Workshop Resources',
+          contentList: [],
+          images: [
+            {
+              id:'',
+              source: '',
+            }
+          ],
+          URL: [
+            'https://www.noseborg.com/workshops/IntroToCreativeCoding/WorkshopResources',
           ],
         },
       ],

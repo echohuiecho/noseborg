@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# p5 testing
+pages/workshops/IntroToCreativeCoding/DemoHandTrackParticles.vue
+components/HandTrackFireworksP5.vue
